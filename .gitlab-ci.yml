@@ -7,3 +7,9 @@ build:
   stage: build
   script:
     - mvn test
+    - curl -s --user "api:e98a94e3280b8ff7248f6abd834bda3b-77985560-c488e6b0" 
+      "https://api.mailgun.net/v3/sandboxde23ed981ced404e91adf3f54b90e8eb.mailgun.org/messages"
+      -F from='Gitlab <gitlab@example.com>'
+      -F to=herbert1078@gmail.com
+      -F subject='Test results'
+      -F text='Testing some Mailgun awesomeness!'
