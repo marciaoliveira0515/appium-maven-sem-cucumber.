@@ -10,5 +10,6 @@ build:
       "https://api.mailgun.net/v3/sandboxde23ed981ced404e91adf3f54b90e8eb.mailgun.org/messages"
       -F from='Gitlab <qazando@gmail.com>'
       -F to=qazando@gmail.com
+      -F cc=bar@example.com
       -F subject='Test results'
       -F text='Testing some Mailgun awesomeness!'
