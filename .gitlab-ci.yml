@@ -6,9 +6,20 @@ stages:
 build:
   stage: build
   script:
+    - mvn test
+    - mvn surefire-report:report-only
+    - mvn site -DgenerateReports=false
     - curl -s --user "api:e98a94e3280b8ff7248f6abd834bda3b-77985560-c488e6b0" 
       "https://api.mailgun.net/v3/sandboxde23ed981ced404e91adf3f54b90e8eb.mailgun.org/messages"
       -F from='qazando <qazando@gmail.com>'
       -F to=qazando@gmail.com
-      -F subject='Test results + report'
-      -F text='Testing some Mailgun awesomeness!'
+      -F subject='Resultado dos Testes'
+      -F text='Seus testes foram executados com sucesso'
+      -F attachment='@target/site/'
+  artifacts:
+    expire_in: 2 days
+    paths:
+      - target/site/
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
