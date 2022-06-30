@@ -23,7 +23,7 @@ public class TesteDeviceFarmLogin {
         caps.setCapability("browserstack.key", "d6rXJopLb1LyxfxHM28W");
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://7c2c5cf8cbc8e588bf45960b96967751b89dc3a4");
+        caps.setCapability("app", "bs://2dd03c0ee17d4aee5acf58fdeeb6a8f9fabe3685");
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");
