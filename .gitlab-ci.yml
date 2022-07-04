@@ -10,4 +10,4 @@ notify:
   stage: notify
   image: kromz/slack-notify:latest
   script:
-    - 'SLACK_MESSAGE="Bom demais, seus testes Passaram" slack-notify'
+    - 'curl -X POST -H "Content-type: application/json" --data "{\"text\":\"${SLACK_MESSAGE}\"}" https://hooks.slack.com/services/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'
