@@ -4,6 +4,7 @@ stages:
 variables:
   SLACK_WEBHOOK: https://hooks.slack.com/services/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
   SLACK_CHANNEL: geral
+  SLACK_USERNAME: Bot
 
 notify:
   stage: notify
