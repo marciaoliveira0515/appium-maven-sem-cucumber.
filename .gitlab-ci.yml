@@ -9,4 +9,5 @@ notify:
   stage: notify
   image: kromz/slack-notify:latest
   script:
-    - 'SLACK_MESSAGE="Message" slack-notify'
+    - 'SLACK_TITLE="Testes executados com sucesso" slack-notify'
+    - 'SLACK_MESSAGE="Bom demais, seus testes Passaram" slack-notify'
