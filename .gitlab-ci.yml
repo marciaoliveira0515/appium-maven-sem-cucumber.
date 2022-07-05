@@ -6,5 +6,33 @@ stages:
 build:
   stage: build
   script:
-    - chmod 777 script.sh
-    - sh script.sh
+    - 'curl -X POST \ -H "Content-Type:application/json; charset=utf-8" --data "{
+    \"channel\": \"#geral\", \"username\": \"*Bot qazando - E2E*\", \"icon_emoji\": \":borat:\", \"text\": \"*Execução Dos Testes*\"
+    \"attachments\": [
+        {
+            \"mrkdwn_in\": [\"text\"],
+            \"color\": \"#36a64f\",
+            \"author_name\": \"<https://$Gitlab_Home_URL/${GITLAB_USER_LOGIN}|${GITLAB_USER_NAME}>($GITLAB_USER_LOGIN)\",
+            \"text\": \"*Job <https://$REPO_URL/-/jobs/${CI_JOB_ID}|TESTING> was SUCCESSFUL in pipeline <https://$REPO_URL/pipelines/${CI_PIPELINE_ID}|${CI_PIPELINE_ID}>*\",
+            \"fields\": [
+                {
+                    \"title\": \"Trigger source\",
+                    \"value\": \"$CI_PIPELINE_SOURCE\",
+                     \"short\": true
+                },
+                {
+                    \"title\": \"Branch\",
+                    \"value\": \"<https://$REPO_URL/tree/$CI_COMMIT_REF_NAME|$CI_COMMIT_REF_NAME>\",
+                    \"short\": true
+                },
+                {
+                    \"title\": \"Commit message\",
+                    \"value\": \"<https://$REPO_URL/commit/${CI_COMMIT_SHA}|$CI_COMMIT_TITLE>\",
+                    \"short\": true
+                }
+            ],
+            \"footer\": \"<https://$REPO_URL|$CI_PROJECT_NAME>\",
+            \"footer_icon\": \"https://www.stickpng.com/assets/images/5847f997cef1014c0b5e48c1.png\",
+        }
+    ]
+}" https://hooks.slack.com/services/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'
