@@ -7,7 +7,7 @@ build:
   stage: build
   script:
     - 'curl -X POST \ -H "Content-Type:application/json; charset=utf-8" --data "{
-    \"channel\": \"#geral\", \"username\": \"*Bot qazando - E2E*\", \"icon_emoji\": \":borat:\", \"text\": \"*Execução Dos Testes*\"
+    \"channel\": \"#geral\", \"username\": \"*Bot qazando - E2E*\", \"icon_emoji\": \":borat:\", \"text\": \"*Execução Dos Testes*\",
     \"attachments\": [
         {
             \"mrkdwn_in\": [\"text\"],
