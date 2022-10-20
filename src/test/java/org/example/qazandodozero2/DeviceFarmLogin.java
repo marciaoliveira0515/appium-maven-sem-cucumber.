@@ -2,6 +2,7 @@ package org.example.qazandodozero2;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -19,11 +20,11 @@ public class DeviceFarmLogin {
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "dudukiller_wrX7LF");
-        caps.setCapability("browserstack.key", "K8XUFRCwR6MPpxBDnGRQ");
+        caps.setCapability("browserstack.user", "herbertsoares_N8eVkb");
+        caps.setCapability("browserstack.key", "d6rXJopLb1LyxfxHM28W");
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://59cd607035220410b0333a9d398efa9e8e775338");
+        caps.setCapability("app", "bs://f9032ba803610d73ff4de299510da43c40af8152");
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");
@@ -35,8 +36,11 @@ public class DeviceFarmLogin {
 
     @Test
     public void testeLogin() {
-        // Se quiser que roda o teste realmente é só retirar os comentários abaixo
-        // ScreenLogin.logar();
-        System.out.println("Teste novo");
+        ScreenLogin.logar();
+    }
+
+    @AfterClass
+    public void stop(){
+        driver.quit();
     }
 }
