@@ -39,8 +39,4 @@ public class DeviceFarmLogin {
         ScreenLogin.logar();
     }
 
-    @AfterClass
-    public void stop(){
-        driver.quit();
-    }
 }
