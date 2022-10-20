@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class DeviceFarmLogin {
+public class DeviceFarmLoginTest {
 
     private static ScreenLogin ScreenLogin;
     private static AppiumDriver<RemoteWebElement> driver;
