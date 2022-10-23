@@ -20,11 +20,11 @@ public class DeviceFarmLoginTest {
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "herbertsoares_N8eVkb");
-        caps.setCapability("browserstack.key", "d6rXJopLb1LyxfxHM28W");
+        caps.setCapability("browserstack.user", "seu user");
+        caps.setCapability("browserstack.key", "sua key");
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://f9032ba803610d73ff4de299510da43c40af8152");
+        caps.setCapability("app", "bs://seu bs");
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");
